@@ -1,10 +1,10 @@
 # echo agent（回声）
 
-**A voice AI agent for Mac, with a Windows beta.** Press Fn+Space in any app and say what you need. Speech is recognized on your computer, and echo agent answers, reads the window you're looking at, fills in messages, sets reminders, or hands coding tasks to the Claude Code and Codex already on your machine.
+**A voice AI agent for Mac and Windows, with a phone app as a remote.** Press a shortcut in any app (Fn+Space on Mac, Alt+Space on Windows) and say what you need. Speech is recognized on your computer, and echo agent answers, reads the window you're looking at, fills in messages, sets reminders, or hands coding tasks to the Claude Code and Codex already on your machine.
 
 **Website: [echoagent.dev](https://echoagent.dev)** · [Download for Mac](https://echoagent.dev/downloads/echo-agent.dmg) · [Windows beta](https://echoagent.dev/windows/) · [Phone app](https://echoagent.dev/mobile/) · [Changelog](https://echoagent.dev/changelog/)
 
-[![echo agent, the voice AI agent for Mac](https://echoagent.dev/media/og-en.png)](https://echoagent.dev)
+[![echo agent, the voice AI agent](https://echoagent.dev/media/og-en.png)](https://echoagent.dev)
 
 This repository is where echo agent takes bug reports and feature requests. The app itself is closed source.
 
@@ -20,7 +20,7 @@ This repository is where echo agent takes bug reports and feature requests. The 
 
 Free to download. The built-in echo model has free daily uses after sign-in, or bring your own API key (Anthropic, OpenAI, Google Gemini, OpenRouter and others).
 
-**Requirements:** macOS 15 or later on Apple silicon. The Windows beta runs on Windows 10 22H2 or Windows 11 (x64).
+**Platforms:** macOS 15 or later on Apple silicon; Windows 10 22H2 or Windows 11 (x64, beta); the phone app on Android and iPhone (TestFlight).
 
 ## Feedback
 
@@ -36,7 +36,7 @@ Free to download. The built-in echo model has free daily uses after sign-in, or 
 
 ## 中文
 
-**回声（echo agent）是 Mac 上的语音 AI Agent，Windows 版在测试中。** 在任何应用里按 Fn+Space 说一句话，语音在本机识别。回声会直接回答，或者看一眼你正在用的窗口再回答；也能替你在微信、飞书、邮件里把话填好、记提醒，或者把编程任务交给你电脑上的 Claude Code 和 Codex。
+**回声（echo agent）是跨 Mac、Windows 和手机的语音 AI Agent。** 在任何应用里按快捷键（Mac 上是 Fn+Space，Windows 上是 Alt+Space）说一句话，语音在本机识别；手机 App 可以远程遥控。Windows 版在测试中。回声会直接回答，或者看一眼你正在用的窗口再回答；也能替你在微信、飞书、邮件里把话填好、记提醒，或者把编程任务交给你电脑上的 Claude Code 和 Codex。
 
 **官网：[echoagent.dev/zh/](https://echoagent.dev/zh/)** · [下载 Mac 版](https://echoagent.dev/downloads/echo-agent.dmg) · [Windows 版](https://echoagent.dev/zh/windows/) · [手机版](https://echoagent.dev/zh/mobile/) · [更新日志](https://echoagent.dev/zh/changelog/)
 
@@ -50,5 +50,7 @@ Free to download. The built-in echo model has free daily uses after sign-in, or 
 - **手机遥控**：在手机上派活、看进度、点批准，手机和 Mac 之间端到端加密。
 
 免费下载。登录后每天有免费次数使用内置模型 echo，也可以填自己的 API Key。
+
+**平台**：macOS 15 及以上（Apple 芯片）；Windows 10 22H2 / Windows 11（x64，测试版）；安卓、iPhone 手机 App。
 
 **反馈**：[提 issue](../../issues/new)，或发邮件到 jiaedwin0605@gmail.com，写上版本号（设置 › 关于）和出问题时在做什么。
