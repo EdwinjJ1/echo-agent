@@ -11,7 +11,7 @@ This repository is where echo agent takes bug reports and feature requests. The 
 ## What it does
 
 - **Talk from anywhere.** Fn+Space in any app (Alt+Space on Windows), or say "echo echo" if you turn the wake word on. English and Chinese are both recognized on your computer; recordings are never saved or uploaded.
-- **Hands coding work to your agents.** "Have Claude Code fix this error" runs the task in the background with your own Claude Code, Codex, DeepSeek Harness or opencode. When one of them needs an approval, the overlay asks you, and you can answer by voice.
+- **Hands coding work to your agents.** "Have Claude Code fix this error" runs the task in the background with your own Claude Code, Codex, DeepSeek Harness, opencode or Hermes Agent. When one of them needs an approval, the overlay asks you, and you can answer by voice. echo installs a missing one for you, keeps each one up to date, and shares what it remembers about you with them.
 - **One page for every session.** The Agents page lists every Claude Code and Codex session on the Mac, including ones you started in a terminal. It has model and permission pickers, separate git worktrees per task, and one-click pull requests. [More](https://echoagent.dev/agents/)
 - **Asks about your screen.** "Screenshot this, how do I turn it on?" captures the window you're using and answers from it. [More](https://echoagent.dev/screenshot-ask-ai/)
 - **Works with your apps.** Fills in WeChat, Feishu and email drafts without sending them, plus reminders, calendar, notes, music, browser tabs and Shortcuts.
@@ -43,7 +43,7 @@ Free to download. The built-in echo model has free daily uses after sign-in, or 
 这个仓库用来收问题反馈和功能建议，App 本身不开源。
 
 - **随时开口**：任何应用里按 Fn+Space（Windows 上是 Alt+Space），打开语音唤醒后喊一声「回声回声」也行。中文、英文都在本机识别，录音不保存、不上传。
-- **把编程任务派出去**：说「让 Claude Code 修好这个报错」，任务交给你自己的 Claude Code、Codex、DeepSeek Harness 或 opencode 在后台跑；它们要批准时浮窗会来问你，用嘴答也行。
+- **把编程任务派出去**：说「让 Claude Code 修好这个报错」，任务交给你自己的 Claude Code、Codex、DeepSeek Harness、opencode 或 Hermes Agent 在后台跑；它们要批准时浮窗会来问你，用嘴答也行。没装的回声帮你装，每家自动保持最新，回声记下的偏好它们也读得到。
 - **一页管所有会话**：「Agent 管理」把这台 Mac 上的 Claude Code、Codex 会话放在一起，你在终端里开的也算；能换模型、改权限，每个任务可以在单独的 git 副本里跑，做完一键开 PR。
 - **截图问**：说「截图看看这里怎么打开」，回声截下你正在用的窗口，看图回答。
 - **操作常用应用**：微信、飞书、邮件只填不发，还能记提醒、查日历、记备忘录、切歌、切网页标签、跑快捷指令。
