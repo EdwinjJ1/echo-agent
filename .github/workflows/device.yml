@@ -16,3 +16,13 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libopus0
       - name: Simulator, probe and shared fixture
         run: python3 -m unittest discover -s device/sim -v
+
+  firmware:
+    runs-on: ubuntu-latest
+    container: espressif/idf:v5.4.1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the ESP32-S3 reference firmware (default configuration)
+        shell: bash
+        working-directory: device/firmware/esp32s3
+        run: . "$IDF_PATH/export.sh" && idf.py build

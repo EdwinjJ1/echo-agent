@@ -365,5 +365,5 @@ USB 和局域网上 `pcm16` 就够了；经中继、经蓝牙一定要用 `opus`
 ## 15. 参考实现
 
 - `device/sim/`：模拟设备（Python 3，只用标准库；有 libopus 时能发 Opus）。不用真硬件就能走 USB 模式：按住说话（喂 wav）、收状态、按一下批准。
-- `device/firmware/esp32s3/`：ESP32-S3 参考固件骨架（ESP-IDF 5.4，USB 模式：一颗键、一颗灯、UAC 麦克风）。还没在真板子上跑过，状态见它的 README。
+- `device/firmware/esp32s3/`：ESP32-S3 参考固件骨架（ESP-IDF 5.4，USB 模式：一颗键、一颗灯、UAC 麦克风）。用 ESP-IDF 5.4.1 编得过，还没在真板子上跑过，状态见它的 README。
 - `device/fixtures/usb-session.json`：第 8 节那样的一次完整交互，主机和设备两边的测试都对它。

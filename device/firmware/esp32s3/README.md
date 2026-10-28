@@ -5,7 +5,7 @@ Plugged into a computer running echo agent it shows up as a serial port named `e
 Hold the key to talk, release to send; when the light shows something waiting for you, a short press approves it.
 Protocol: [`docs/device-protocol/README.en.md`](../../../docs/device-protocol/README.en.md).
 
-Status: skeleton. Not compiled yet and not run on a board yet; both will be noted here once done.
+Status: skeleton. It compiles with ESP-IDF 5.4.1 in three configurations (the XIAO default with the USB microphone; audio over the serial port with a WS2812 light; the LCKFB board without a microphone). It has not run on a board yet.
 The USB IDs are Espressif's VID `0x303A` with PID `0x8001` from its test range, for prototypes only; a product needs a PID of its own (Espressif grants them to open-source projects).
 
 | Board | Key | Light | Microphone |
@@ -22,7 +22,7 @@ idf.py menuconfig          # "echo device": board, pins, light, microphone
 idf.py build flash monitor
 
 # or without installing ESP-IDF
-docker run --rm -v "$PWD":/project -w /project espressif/idf:v5.4.1 idf.py set-target esp32s3 build
+docker run --rm -v "$PWD":/project -w /project espressif/idf:v5.4.1 idf.py build
 ```
 
 The native USB port (the one wired to GPIO19/20) is the device's port; the UART bridge port, if the board has one, is only for flashing and logs.

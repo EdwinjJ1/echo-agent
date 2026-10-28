@@ -367,5 +367,5 @@ For wearables without Wi-Fi that need to save power. The phone app is a pipe: de
 ## 15. Reference implementations
 
 - `device/sim/`: a simulated device (Python 3, standard library only; sends Opus when libopus is present). Runs USB mode without hardware: hold to talk (feeding a wav), receive status, press once to approve.
-- `device/firmware/esp32s3/`: an ESP32-S3 reference firmware skeleton (ESP-IDF 5.4, USB mode: one key, one light, a UAC microphone). It has not run on a board yet; see its README for the status.
+- `device/firmware/esp32s3/`: an ESP32-S3 reference firmware skeleton (ESP-IDF 5.4, USB mode: one key, one light, a UAC microphone). It compiles with ESP-IDF 5.4.1 but has not run on a board yet; see its README for the status.
 - `device/fixtures/usb-session.json`: a complete exchange like the one in section 8; tests on both sides check against it.

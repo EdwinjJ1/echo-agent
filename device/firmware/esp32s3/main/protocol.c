@@ -15,10 +15,10 @@
 
 static const char *TAG = "echo_proto";
 
-#define LINE_MAX 4096
+#define LINE_LIMIT 4096
 #define CHUNK_SAMPLES (ECHO_RATE / 5)  // 200 ms
 
-static char line[LINE_MAX];
+static char line[LINE_LIMIT];
 static size_t line_length;
 static bool line_overflow;
 static int next_id = 1;
@@ -168,7 +168,7 @@ static void read_lines(void)
                 }
                 line_length = 0;
                 line_overflow = false;
-            } else if (line_length + 1 < LINE_MAX) {
+            } else if (line_length + 1 < LINE_LIMIT) {
                 line[line_length++] = c;
             } else {
                 line_overflow = true;  // longer than anything this firmware reads: drop it

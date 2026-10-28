@@ -28,7 +28,7 @@ echo agent has an open device protocol, so a key on your desk, a status light or
 
 - [Device protocol v1](docs/device-protocol/README.en.md) ([中文](docs/device-protocol/README.md)): capability levels, USB, per-device keys, local network, relay, Bluetooth.
 - [Simulator and probe](device/sim/): a simulated device and a minimal host in Python, to try the protocol without hardware.
-- [ESP32-S3 reference firmware](device/firmware/esp32s3/): USB mode; a skeleton, not yet compiled or run on a board.
+- [ESP32-S3 reference firmware](device/firmware/esp32s3/): USB mode; a skeleton that compiles with ESP-IDF 5.4.1 but has not run on a board yet.
 
 Host support: the Mac version supports the USB mode; the Windows version is being ported. The protocol and the code under `device/` are licensed under [Apache-2.0](LICENSE).
 
@@ -64,7 +64,7 @@ Host support: the Mac version supports the USB mode; the Windows version is bein
 **平台**：macOS 15 及以上（Apple 芯片）；Windows 10 22H2 / Windows 11（x64，测试版）；安卓、iPhone 手机 App。
 
 **做硬件**：回声的设备协议是公开的，桌上的一颗键、一盏状态灯、夹在衣领上的麦克风都能接进来：按住说话，看编程 Agent 在干什么，按一下就批准。
-[协议规范](docs/device-protocol/README.md)（[English](docs/device-protocol/README.en.md)）· [模拟设备](device/sim/) · [ESP32-S3 参考固件](device/firmware/esp32s3/)（骨架，还没编译过、没上过真板子）。
+[协议规范](docs/device-protocol/README.md)（[English](docs/device-protocol/README.en.md)）· [模拟设备](device/sim/) · [ESP32-S3 参考固件](device/firmware/esp32s3/)（骨架，用 ESP-IDF 5.4.1 编得过，还没上过真板子）。
 Mac 版已支持 USB 直连，Windows 版正在移植。协议和 `device/` 里的代码按 [Apache-2.0](LICENSE) 开源。
 
 **反馈**：[提 issue](../../issues/new)，或发邮件到 jiaedwin0605@gmail.com，写上版本号（设置 › 关于）和出问题时在做什么。
