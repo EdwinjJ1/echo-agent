@@ -1,0 +1,6 @@
+__pycache__/
+.DS_Store
+device/firmware/*/build/
+device/firmware/*/managed_components/
+device/firmware/*/sdkconfig
+device/firmware/*/sdkconfig.old

@@ -1,0 +1,18 @@
+name: device
+
+on:
+  push:
+    branches: [main]
+    paths: ["device/**", "docs/device-protocol/**", ".github/workflows/device.yml"]
+  pull_request:
+    paths: ["device/**", "docs/device-protocol/**", ".github/workflows/device.yml"]
+
+jobs:
+  simulator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: libopus for the Opus tests
+        run: sudo apt-get update && sudo apt-get install -y libopus0
+      - name: Simulator, probe and shared fixture
+        run: python3 -m unittest discover -s device/sim -v

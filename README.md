@@ -6,7 +6,7 @@
 
 [![echo agent, the voice AI agent](https://echoagent.dev/media/og-en.png)](https://echoagent.dev)
 
-This repository is where echo agent takes bug reports and feature requests. The app itself is closed source.
+This repository is where echo agent takes bug reports and feature requests. The app itself is closed source; the device protocol for hardware is open (see [Build hardware for echo agent](#build-hardware-for-echo-agent)).
 
 ## What it does
 
@@ -21,6 +21,16 @@ This repository is where echo agent takes bug reports and feature requests. The 
 Free to download. The built-in echo model has free daily uses after sign-in, or bring your own API key (Anthropic, OpenAI, Google Gemini, OpenRouter and others).
 
 **Platforms:** macOS 15 or later on Apple silicon; Windows 10 22H2 or Windows 11 (x64, beta); the phone app on Android and iPhone (TestFlight).
+
+## Build hardware for echo agent
+
+echo agent has an open device protocol, so a key on your desk, a status light or a clip-on microphone can be a way into it: hold to talk, see what your coding agents are doing, press once to approve.
+
+- [Device protocol v1](docs/device-protocol/README.en.md) ([中文](docs/device-protocol/README.md)): capability levels, USB, per-device keys, local network, relay, Bluetooth.
+- [Simulator and probe](device/sim/): a simulated device and a minimal host in Python, to try the protocol without hardware.
+- [ESP32-S3 reference firmware](device/firmware/esp32s3/): USB mode; a skeleton, not yet compiled or run on a board.
+
+Host support: the Mac version supports the USB mode; the Windows version is being ported. The protocol and the code under `device/` are licensed under [Apache-2.0](LICENSE).
 
 ## Feedback
 
@@ -40,7 +50,7 @@ Free to download. The built-in echo model has free daily uses after sign-in, or 
 
 **官网：[echoagent.dev/zh/](https://echoagent.dev/zh/)** · [下载 Mac 版](https://echoagent.dev/downloads/echo-agent.dmg) · [Windows 版](https://echoagent.dev/zh/windows/) · [手机版](https://echoagent.dev/zh/mobile/) · [更新日志](https://echoagent.dev/zh/changelog/)
 
-这个仓库用来收问题反馈和功能建议，App 本身不开源。
+这个仓库用来收问题反馈和功能建议，App 本身不开源；硬件的设备协议是公开的（见下面「做硬件」）。
 
 - **随时开口**：任何应用里按 Fn+Space（Windows 上是 Alt+Space），打开语音唤醒后喊一声「回声回声」也行。中文、英文都在本机识别，录音不保存、不上传。
 - **把编程任务派出去**：说「让 Claude Code 修好这个报错」，任务交给你自己的 Claude Code、Codex、DeepSeek Harness、opencode 或 Hermes Agent 在后台跑；它们要批准时浮窗会来问你，用嘴答也行。没装的回声帮你装，每家自动保持最新，回声记下的偏好它们也读得到。
@@ -52,5 +62,9 @@ Free to download. The built-in echo model has free daily uses after sign-in, or 
 免费下载。登录后每天有免费次数使用内置模型 echo，也可以填自己的 API Key。
 
 **平台**：macOS 15 及以上（Apple 芯片）；Windows 10 22H2 / Windows 11（x64，测试版）；安卓、iPhone 手机 App。
+
+**做硬件**：回声的设备协议是公开的，桌上的一颗键、一盏状态灯、夹在衣领上的麦克风都能接进来：按住说话，看编程 Agent 在干什么，按一下就批准。
+[协议规范](docs/device-protocol/README.md)（[English](docs/device-protocol/README.en.md)）· [模拟设备](device/sim/) · [ESP32-S3 参考固件](device/firmware/esp32s3/)（骨架，还没编译过、没上过真板子）。
+Mac 版已支持 USB 直连，Windows 版正在移植。协议和 `device/` 里的代码按 [Apache-2.0](LICENSE) 开源。
 
 **反馈**：[提 issue](../../issues/new)，或发邮件到 jiaedwin0605@gmail.com，写上版本号（设置 › 关于）和出问题时在做什么。

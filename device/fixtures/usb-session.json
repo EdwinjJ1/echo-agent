@@ -1,0 +1,397 @@
+{
+  "about": "Shared by echo agent's own tests and the reference implementation's tests (device/sim/test_device.py). Spec: docs/device-protocol.",
+  "holdMs": 400,
+  "transcript": [
+    {
+      "from": "host",
+      "message": {
+        "ev": "sync",
+        "d": {}
+      }
+    },
+    {
+      "from": "device",
+      "message": {
+        "id": "1",
+        "m": "hello",
+        "p": {
+          "v": 1,
+          "device": {
+            "id": "3c84279a10b4",
+            "model": "echo-desk-s3",
+            "fw": "0.1.0"
+          },
+          "caps": {
+            "button": {
+              "count": 1
+            },
+            "light": {
+              "kind": "rgb",
+              "count": 1
+            },
+            "mic": {
+              "via": "uac",
+              "rates": [
+                16000
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "from": "host",
+      "message": {
+        "id": "1",
+        "ok": true,
+        "r": {
+          "v": 1,
+          "host": {
+            "name": "Alex's MacBook Pro",
+            "app": "echo agent",
+            "version": "0.1.83"
+          },
+          "mic": {
+            "via": "uac",
+            "rate": 16000
+          },
+          "now": 1761650000000,
+          "features": [
+            "status",
+            "approve",
+            "voice"
+          ]
+        }
+      }
+    },
+    {
+      "from": "host",
+      "message": {
+        "ev": "status",
+        "d": {
+          "seq": 1,
+          "light": "idle",
+          "working": 0,
+          "waiting": 0,
+          "latest": null
+        }
+      }
+    },
+    {
+      "from": "device",
+      "message": {
+        "ev": "button",
+        "d": {
+          "action": "down",
+          "t": 120400
+        }
+      },
+      "meaning": "pressed"
+    },
+    {
+      "from": "host",
+      "message": {
+        "ev": "status",
+        "d": {
+          "seq": 2,
+          "light": "listening",
+          "working": 0,
+          "waiting": 0,
+          "latest": null
+        }
+      }
+    },
+    {
+      "from": "device",
+      "message": {
+        "ev": "button",
+        "d": {
+          "action": "up",
+          "t": 122950
+        }
+      },
+      "meaning": "talked"
+    },
+    {
+      "from": "host",
+      "message": {
+        "ev": "status",
+        "d": {
+          "seq": 3,
+          "light": "working",
+          "working": 1,
+          "waiting": 0,
+          "latest": null
+        }
+      }
+    },
+    {
+      "from": "host",
+      "message": {
+        "ev": "status",
+        "d": {
+          "seq": 4,
+          "light": "waiting",
+          "working": 1,
+          "waiting": 1,
+          "latest": null
+        }
+      }
+    },
+    {
+      "from": "device",
+      "message": {
+        "ev": "button",
+        "d": {
+          "action": "down",
+          "t": 151000
+        }
+      },
+      "meaning": "pressed"
+    },
+    {
+      "from": "device",
+      "message": {
+        "ev": "button",
+        "d": {
+          "action": "up",
+          "t": 151180
+        }
+      },
+      "meaning": "tapped"
+    },
+    {
+      "from": "host",
+      "message": {
+        "ev": "status",
+        "d": {
+          "seq": 5,
+          "light": "working",
+          "working": 1,
+          "waiting": 0,
+          "latest": null
+        }
+      }
+    }
+  ],
+  "hello": {
+    "params": {
+      "v": 1,
+      "device": {
+        "id": "3c84279a10b4",
+        "model": "echo-desk-s3",
+        "fw": "0.1.0"
+      },
+      "caps": {
+        "button": {
+          "count": 1
+        },
+        "light": {
+          "kind": "rgb",
+          "count": 1
+        },
+        "mic": {
+          "via": "uac",
+          "rates": [
+            16000
+          ]
+        }
+      }
+    },
+    "parsed": {
+      "id": "3c84279a10b4",
+      "model": "echo-desk-s3",
+      "firmware": "0.1.0",
+      "buttons": 1,
+      "light": "rgb",
+      "mic": "uac",
+      "screen": false
+    }
+  },
+  "micChoices": [
+    {
+      "mic": {
+        "via": "uac",
+        "rates": [
+          48000,
+          16000
+        ]
+      },
+      "choice": {
+        "via": "uac",
+        "rate": 16000
+      }
+    },
+    {
+      "mic": {
+        "via": "stream",
+        "codecs": [
+          "opus",
+          "pcm16"
+        ],
+        "rates": [
+          16000
+        ]
+      },
+      "choice": {
+        "via": "stream",
+        "codec": "pcm16",
+        "rate": 16000
+      }
+    },
+    {
+      "mic": {
+        "via": "stream",
+        "codecs": [
+          "opus"
+        ],
+        "rates": [
+          16000
+        ]
+      },
+      "choice": {
+        "via": "stream",
+        "codec": "opus",
+        "rate": 16000
+      }
+    },
+    {
+      "mic": {
+        "via": "stream",
+        "codecs": [
+          "aac"
+        ],
+        "rates": [
+          16000
+        ]
+      },
+      "choice": null
+    },
+    {
+      "mic": {
+        "via": "stream",
+        "codecs": [
+          "pcm16"
+        ],
+        "rates": [
+          8000,
+          48000
+        ]
+      },
+      "choice": {
+        "via": "stream",
+        "codec": "pcm16",
+        "rate": 8000
+      }
+    }
+  ],
+  "gestures": [
+    {
+      "events": [
+        [
+          "down",
+          1000
+        ],
+        [
+          "up",
+          1399
+        ]
+      ],
+      "meanings": [
+        "pressed",
+        "tapped"
+      ]
+    },
+    {
+      "events": [
+        [
+          "down",
+          1000
+        ],
+        [
+          "up",
+          1400
+        ]
+      ],
+      "meanings": [
+        "pressed",
+        "talked"
+      ]
+    },
+    {
+      "events": [
+        [
+          "up",
+          500
+        ],
+        [
+          "down",
+          1000
+        ],
+        [
+          "down",
+          1100
+        ],
+        [
+          "up",
+          3000
+        ]
+      ],
+      "meanings": [
+        "pressed",
+        "talked"
+      ]
+    }
+  ],
+  "lights": [
+    {
+      "listening": false,
+      "working": 0,
+      "waiting": 0,
+      "latest": null,
+      "light": "idle"
+    },
+    {
+      "listening": true,
+      "working": 2,
+      "waiting": 1,
+      "latest": "failed",
+      "light": "listening"
+    },
+    {
+      "listening": false,
+      "working": 2,
+      "waiting": 1,
+      "latest": "failed",
+      "light": "waiting"
+    },
+    {
+      "listening": false,
+      "working": 2,
+      "waiting": 0,
+      "latest": "failed",
+      "light": "failed"
+    },
+    {
+      "listening": false,
+      "working": 2,
+      "waiting": 0,
+      "latest": "done",
+      "light": "working"
+    },
+    {
+      "listening": false,
+      "working": 0,
+      "waiting": 0,
+      "latest": "done",
+      "light": "done"
+    }
+  ],
+  "opus": {
+    "about": "200 ms of a 440 Hz tone at 16 kHz, 20 ms packets, framed as in voice.chunk; made with libopus 1.6.1",
+    "data": "AEdIguIDbJ6ZrAAABMKXksOoZf2U67/ul/KkULV8EO7XwksuPMAtEu/PFmV55FPlzzYUy103Cw0Iuk04YHneKwkyWGBB4znL6gA0SKcZH1feghIxD4M5zOfimmvJ/i9XXOYXAgo6jooKlR2MNCy+4LirzFifrQruFhKKKpREmAAxSJ1pzBBZ0mECunsGV6pYnCC5SdJ6ujrSxzLYJBLFOyI+85kz/984j8AYr5M4ZuxaMAArSJ1pzBBZ0lgT1BKRrfSUdewoASYdXXi5UM7uSmkt6IOCkc9/sfmlJw2TGwAtSJ1pzAm0IAAamDPvDUZHrxufDU84xon0v4FEW2ezvxGkD1ILPc/QePIhIjPIAC1InWnMEFnSZtFEIpRKHNN6GhhUlvcXfIBFzgpJu6x2d0COX1zBk/wO0bD+qIAANEidacwJtCAI//s3hxAAwhh0mMCMUHwPUoFlZLfXvGnxVPthkOGXPqkAVkBwCLyjcFgyU1wANUidacwQWdJm0y7RFHTlYYziGzIBqFnAJDtk/eKqH1KHOQxy1y6IlWwFhvdmSXntKW2RIR7IADFInWnMEFnSWBPU1/PWID2m2fPtgeAKhtgCBHc8MR9f4rMhrjc6f8tP3M7eADv14XU9AC9InWnMCbQgABqY1FTMlmv3cY7ZOuO5Hk1hZ+U3P+bkGADZ0k+EaYTMOfIUxyqQcA==",
+    "packets": 10,
+    "samples": 3200,
+    "frequency": 440
+  }
+}

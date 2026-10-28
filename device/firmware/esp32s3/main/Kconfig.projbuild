@@ -1,0 +1,80 @@
+menu "echo device"
+
+    choice ECHO_BOARD
+        prompt "Board"
+        default ECHO_BOARD_XIAO_S3_SENSE
+        help
+            Pin defaults for the boards the reference firmware is written for. Pick "Custom" to set every pin yourself.
+
+        config ECHO_BOARD_XIAO_S3_SENSE
+            bool "Seeed XIAO ESP32S3 Sense (PDM microphone, user LED)"
+        config ECHO_BOARD_LCKFB_S3
+            bool "LCKFB ESP32-S3 (ES7210 microphone array; microphone not wired up yet)"
+        config ECHO_BOARD_CUSTOM
+            bool "Custom"
+    endchoice
+
+    config ECHO_BUTTON_GPIO
+        int "Key GPIO (pressed = low)"
+        default 0
+        help
+            GPIO0 is the BOOT key on both boards.
+
+    choice ECHO_LIGHT
+        prompt "Light"
+        default ECHO_LIGHT_MONO
+        config ECHO_LIGHT_MONO
+            bool "One single-color LED on a GPIO"
+        config ECHO_LIGHT_WS2812
+            bool "One WS2812 RGB LED"
+    endchoice
+
+    config ECHO_LIGHT_GPIO
+        int "Light GPIO"
+        default 21 if ECHO_BOARD_XIAO_S3_SENSE
+        default 48
+
+    config ECHO_LIGHT_ACTIVE_LOW
+        bool "Single-color LED lights when the GPIO is low"
+        depends on ECHO_LIGHT_MONO
+        default y if ECHO_BOARD_XIAO_S3_SENSE
+        default n
+
+    choice ECHO_MIC
+        prompt "Microphone"
+        default ECHO_MIC_PDM if ECHO_BOARD_XIAO_S3_SENSE
+        default ECHO_MIC_NONE
+        config ECHO_MIC_PDM
+            bool "PDM microphone on I2S"
+        config ECHO_MIC_NONE
+            bool "None (the host uses the computer's microphone)"
+    endchoice
+
+    config ECHO_MIC_PDM_CLK_GPIO
+        int "PDM clock GPIO"
+        depends on ECHO_MIC_PDM
+        default 42
+
+    config ECHO_MIC_PDM_DATA_GPIO
+        int "PDM data GPIO"
+        depends on ECHO_MIC_PDM
+        default 41
+
+    choice ECHO_MIC_PATH
+        prompt "How audio reaches the host"
+        depends on ECHO_MIC_PDM
+        default ECHO_MIC_PATH_UAC
+        help
+            UAC: the device is also a USB microphone and the host records from it.
+            Stream: audio goes over the serial port as voice.* messages (pcm16), for when UAC gives trouble.
+        config ECHO_MIC_PATH_UAC
+            bool "USB microphone (UAC)"
+        config ECHO_MIC_PATH_STREAM
+            bool "voice.* over the serial port"
+    endchoice
+
+    config ECHO_DEVICE_NAME
+        string "Device name shown on the host"
+        default "echo desk key"
+
+endmenu
